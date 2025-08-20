@@ -59,7 +59,7 @@ actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.reck
 # >>> strict sync reck: actions.burst+=/bladestorm,if=buff.enrage.up&buff.recklessness.up
 # now do execute/rage spends after bladestorm is offered
 # actions.burst+=/storm_bolt,if=buff.bladestorm.up
-actions.burst+=/execute,if=variable.can_execute
-actions.burst+=/rampage,if=variable.enrage_missing|variable.rage_high
-actions.burst+=/rampage,if=variable.rage_dump
+# actions.burst+=/execute,if=variable.can_execute
+# actions.burst+=/rampage,if=variable.enrage_missing|variable.rage_high
+# actions.burst+=/rampage,if=variable.rage_dump
 actions.burst+=/run_action_list,name=sustained
