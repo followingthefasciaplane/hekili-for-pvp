@@ -54,6 +54,9 @@ actions.burst+=/avatar,if=cooldown.avatar.ready
 actions.burst+=/thunderous_roar,if=cooldown.thunderous_roar.ready
 # >>> move Bladestorm early so Execute/Rampage don't suppress it <<<
 actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>20)
+# bladestorm options:
+# >>> avoid whiffing during kites: actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>20)&movement.distance<=1
+# >>> strict sync reck: actions.burst+=/bladestorm,if=buff.enrage.up&buff.recklessness.up
 # now do execute/rage spends after bladestorm is offered
 actions.burst+=/execute,if=variable.can_execute
 actions.burst+=/rampage,if=variable.enrage_missing|variable.rage_high
