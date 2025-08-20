@@ -31,8 +31,8 @@ actions.variables+=/variable,name=burst_window,value=buff.recklessness.up|buff.a
 # ========== TRINKETS ==========
 actions.trinkets=use_item,slot=trinket1,if=variable.burst_window&trinket.1.has_use_buff
 actions.trinkets+=/use_item,slot=trinket2,if=variable.burst_window&trinket.2.has_use_buff
-actions.trinkets+=/use_item,slot=trinket1,if=!trinket.1.has_use_buff&trinket.1.has_use
-actions.trinkets+=/use_item,slot=trinket2,if=!trinket.2.has_use_buff&trinket.2.has_use
+actions.trinkets+=/use_item,slot=trinket1,if=!trinket.1.has_use_buff&trinket.1.has_cooldown
+actions.trinkets+=/use_item,slot=trinket2,if=!trinket.2.has_use_buff&trinket.2.has_cooldown
 actions.trinkets+=/use_items
 
 # ========== SUSTAINED DAMAGE ==========
