@@ -36,6 +36,7 @@ actions.trinkets+=/use_item,slot=trinket2,if=!trinket.2.has_use_buff&trinket.2.h
 actions.trinkets+=/use_items
 
 # ========== SUSTAINED DAMAGE ==========
+actions.sustained=impending_victory,if=talent.impending_victory.enabled&health.pct<70
 actions.sustained=rampage,if=variable.enrage_missing|variable.rage_cap
 actions.sustained+=/execute,if=variable.can_execute&debuff.marked_for_execution.stack>=3
 actions.sustained+=/onslaught
@@ -46,6 +47,7 @@ actions.sustained+=/raging_blow
 actions.sustained+=/bloodthirst
 
 # ========== BURST (REORDERED TO SURFACE BLADESTORM) ==========
+actions.sustained=impending_victory,if=talent.impending_victory.enabled&health.pct<70
 actions.burst=recklessness,if=cooldown.recklessness.ready
 actions.burst+=/onslaught
 # ensure Enrage once; don't keep dumping before Bladestorm
