@@ -37,7 +37,7 @@ actions.trinkets+=/use_items
 
 # ========== SUSTAINED DAMAGE ==========
 actions.sustained=impending_victory,if=talent.impending_victory.enabled&health.pct<70
-actions.sustained=rampage,if=variable.enrage_missing|variable.rage_cap
+actions.sustained+=/rampage,if=variable.enrage_missing|variable.rage_cap
 actions.sustained+=/execute,if=variable.can_execute&debuff.marked_for_execution.stack>=3
 actions.sustained+=/onslaught
 actions.sustained+=/rampage,if=variable.rage_dump
@@ -47,21 +47,19 @@ actions.sustained+=/raging_blow
 actions.sustained+=/bloodthirst
 
 # ========== BURST (REORDERED TO SURFACE BLADESTORM) ==========
-actions.sustained=impending_victory,if=talent.impending_victory.enabled&health.pct<70
-actions.burst=recklessness,if=cooldown.recklessness.ready
+actions.burst=impending_victory,if=talent.impending_victory.enabled&health.pct<70
+actions.burst+=/recklessness,if=cooldown.recklessness.ready
 actions.burst+=/onslaught
-# ensure Enrage once; don't keep dumping before Bladestorm
 actions.burst+=/rampage,if=!buff.enrage.up
 actions.burst+=/avatar,if=cooldown.avatar.ready
 actions.burst+=/thunderous_roar,if=cooldown.thunderous_roar.ready
-# >>> move Bladestorm early so Execute/Rampage don't suppress it <<<
-actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>20)
+actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>10)
 # bladestorm options:
-# >>> avoid whiffing during kites: actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>20)&movement.distance<=1
-# >>> strict sync reck: actions.burst+=/bladestorm,if=buff.enrage.up&buff.recklessness.up
-# now do execute/rage spends after bladestorm is offered
+# actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>20)&movement.distance<=1
+# actions.burst+=/bladestorm,if=buff.enrage.up&buff.recklessness.up
+# actions.burst+=/execute,if=variable.can_execute
+# actions.burst+=/rampage,if=variable.enrage_missing|variable.rage_high
 # actions.burst+=/storm_bolt,if=buff.bladestorm.up
-actions.burst+=/execute,if=variable.can_execute
-actions.burst+=/rampage,if=variable.enrage_missing|variable.rage_high
 # actions.burst+=/rampage,if=variable.rage_dump
 actions.burst+=/run_action_list,name=sustained
+
