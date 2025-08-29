@@ -7,7 +7,7 @@ hekili priorities focusing on arena/solo shuffle/battleground blitz gameplay
 - talents: `CgEArbixk/ZKwTdpZGVHeylmLAAAAAAAAAQjZMzwM2YMmZswMzMmhZMzstNmZmxygxMmZmZsMMzwMDAAAixy2AbgJYGmAzwGA`
 - display: primary only 5 icons + single target
 ```
-Hekili:nwvtpUjmq0Fl9sv7Lii0KnRuBp0B9YQvIEPxmmXE4dfInY2K0TAf)27ytZIHnSBoKid8M37nJNXMfZ(flvawK9W6O1BI2LeTk6lrjXBzP2NArwAlWpaL0cjCK()Xtp6E3tnkq4I1O60C69S09D1n2Fkz7FnHjr7whtyBro7H7wZsRQfcCakA4S0Ftm0uBSgVDWcORXslFWBpuc7Bqb7hSuUU2I6AGL(H(89DffR2dwBdMzQuD2vDTSuGBRvsYobFGzj3SivwqxI2vcsFqYX(8V)T(8DJmXRCaCCK44OZGzQIISsUWzWxGzSk9XS9kY5Vj595B7Z)4f73aufWfjz((8NFUp))ruHqJTAvl32N)vYqjBcTpzMVC7jKl(ar1i)qdAms637j7MOGmSsXpCgo5RfBwu(xtXGcF6soJAdQpG6Sb)5Ta5T5XDhf3NhvV(ylkf1YYSt1CQI9KZfBx0fEPqPM6DxjuNLJePKMgORSY3wC3nrqyJvy1ZXWU3MHjfBNrg3hUc5WjG2iC0E)Bt7aWx29U2(6iR2QoPa1QotMwnqFC0nM4VtBZ1mZsDWbTsJ99EZS8C(8TXbfCpomNgVoGvnCSfggvJxEExGEspcupOiRqPZW)G8ohfROos(HbMtcsqtN78QmbcucfGz9O2dCmODYTKoImnwIsudELNC2vJsjSv1AJVhn2pQ)623PNheVje1LsXmmBdXCXYZW8oJeEZX1WFXjvRLD)UP(Q0nctyopx37dXfsYeC0JTuNO6iDa)lxrC1d9NsVVFWQklBqxnmiMzhhnxoIOZGwsU24UMRvRkQB834bD2kLMw5aX(3p
+Hekili:nwztpUjmqy4Fl9sv7feKSjBQuBp0B9s0krV0lgCSh(qXyJSnjnvR43EhBAwmSHDZHeXhZ8mVE87yijKFrs5ulq2VkE1M4DRJJIFij(HTKu7LwGK2szhPL4fsAd()tNEY9SlcfL7Y1O60m85K0dD1c7pLKdVg464DRsWyBbgz)JRiPv1ComekyyK0FJee1gRXlhOG2jS4L79YdK0dcGt(bjLPRTGUMss)qF(HUIIOduRvazMkvNnQRLKsz2ALeLtWliwunlIYs1LGnIJ1NkzqF(3)wF(UrsSkxaogRDm6mqMQOiRKXDc8LWmwLUj7Gcv(BcVpFBF(hVkFbf7aUmrX3N)8Z95)pJkGkSvrTmBF(xrbTEtO8rX8W9VGC5huunWokaJrI)EVYUjoyfwPyhptp57fBwS8VgXqf(011mOnG(iOZg0NxcO2MN3JyEFES61nTGKxllZovZWo2fNk2UOk8LcKA07gXvNLJGusJG2vw5TfpExacnwHDphHDVnHjnBNqg3hUbC6jkUr4W(L3g7qGVS7DR91rQ2Qojh0QotMwnGpj(ox4VJT5wIzjhCGvA037fZYZ5Z3ghQG72H50Kvbu10Mw6WOAYYZ7CWdTHIEqEwHsNb)byDoerOJKDCG86rUdVFG767rQ8mnucsqt9uNCUKqP42QATX7)s8JXV2AoDwpztyuxxMZIzBymxL8SyEh7UxCmn9VWcDI5QF3uDv6gpXyopVUFjmUqitIdVTfDzQg8W7xo()MhOpfVFV2QklfGRhgKZSJAMxoe0zQwIQ24(ewRwvul8FnJ2zRuA8kxqK)9d
 ```
 
 
@@ -26,7 +26,7 @@ actions+=/avatar,if=buff.recklessness.down&buff.enrage.up
 actions+=/thunderous_roar,if=buff.avatar.up|buff.recklessness.up           
 actions+=/bladestorm,if=buff.enrage.up&buff.recklessness.up|buff.avatar.up|target.health.pct<=30
 actions+=/rampage,if=buff.enrage.down|rage>=120
-actions+=/execute,if=debuff.marked_for_execution.stack>=3|buff.sudden_death.stack>=2                            
+actions+=/execute,if=debuff.marked_for_execution.stack>=3                          
 actions+=/bloodthirst,if=buff.enraged_regeneration.up
 actions+=/onslaught
 actions+=/rampage
