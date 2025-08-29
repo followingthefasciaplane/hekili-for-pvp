@@ -19,7 +19,7 @@ actions+=/battle_shout,if=!buff.battle_shout.up
 actions+=/charge,if=target.distance>=8 
 actions+=/storm_bolt,if=target.distance>6&buff.bladestorm.up|target.health.pct<=35
 actions+=/shockwave,if=target.distance<=6&buff.recklessness.up|target.health.pct<=50
-actions+=/impending_victory,if=health.pct <= 50|(buff.berserker_stance.up&health.pct<=70)  
+actions+=/impending_victory,if=health.pct<=50|(buff.berserker_stance.up&health.pct<=70)  
 actions+=/onslaught,if=buff.enrage.down
 actions+=/recklessness,if=buff.enrage.up                                  
 actions+=/avatar,if=buff.recklessness.down&buff.enrage.up                  
