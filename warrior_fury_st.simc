@@ -1,43 +1,45 @@
 # Fury Warrior PvP APL - The War Within 11.2
 # Specialization: ST Slayer for Arena, Solo Shuffle
 # Patch: 11.2.0
-# Talents: CgEArbixk/ZKwTdpZGVHeylmLAAAAAAAAAQjZMzwM2YMmZswMzMmhZMzstNmZmxygxMmZmZsMMzwMDAAAixy2AbgJYGmAzwGA
+# Pack Name: Fury Warrior PvP — Slayer S3 (11.2.0)
 
 # ========== PRECOMBAT ==========
-actions.precombat=snapshot_stats
-actions.precombat+=/berserker_stance,toggle=on
-actions.precombat+=/battle_shout,if=!buff.battle_shout.up
+actions.precombat+=/battle_shout
+actions.precombat+=/berserker_stance
+actions.precombat+=/variable,name=can_execute,value=0
+actions.precombat+=/variable,name=enrage_missing,value=1
+actions.precombat+=/variable,name=rage_cap,value=0
+actions.precombat+=/variable,name=rage_high,value=0
+actions.precombat+=/variable,name=rage_dump,value=0
+actions.precombat+=/variable,name=should_burst,value=0
+actions.precombat+=/variable,name=burst_window,value=0
 
-# ========== MAIN ACTION PRIORITY ==========
-actions=auto_attack
+# ========== DEFAULT (PRIMARY) ==========
 actions+=/charge,if=time<=0.5|movement.distance>5
-actions+=/pummel,if=target.debuff.casting.react
+actions+=/heroic_leap,if=movement.distance>25
+actions+=/pummel
 actions+=/battle_shout,if=!buff.battle_shout.up
-actions+=/call_action_list,name=variables
+# Update variables every frame
+actions+=/variable,name=can_execute,value=buff.sudden_death.up|target.health.pct<35
+actions+=/variable,name=enrage_missing,value=!buff.enrage.up|buff.enrage.remains<=gcd
+actions+=/variable,name=rage_cap,value=rage>=115
+actions+=/variable,name=rage_high,value=rage>=100
+actions+=/variable,name=rage_dump,value=rage>=85
+actions+=/variable,name=should_burst,value=cooldowns&(rage>=50)&(buff.enrage.up|rage>=85)
+actions+=/variable,name=burst_window,value=buff.recklessness.up|buff.avatar.up
+# Call sublists
 actions+=/call_action_list,name=trinkets
-
-# stay in burst while CDs are up so we actually reach Bladestorm
-actions+=/run_action_list,name=burst,if=(variable.should_burst|variable.burst_window)&((cooldown.recklessness.ready)|(cooldown.avatar.ready&buff.enrage.up)|variable.burst_window)
-actions+=/run_action_list,name=sustained
-
-# ========== VARIABLES ==========
-actions.variables=variable,name=can_execute,value=buff.sudden_death.up|target.health.pct<35
-actions.variables+=/variable,name=enrage_missing,value=!buff.enrage.up|buff.enrage.remains<=gcd
-actions.variables+=/variable,name=rage_cap,value=rage>=115
-actions.variables+=/variable,name=rage_high,value=rage>=100
-actions.variables+=/variable,name=rage_dump,value=rage>=85
-actions.variables+=/variable,name=should_burst,value=toggle.cooldowns&(rage>=50)&(buff.enrage.up|rage>=85)
-actions.variables+=/variable,name=burst_window,value=buff.recklessness.up|buff.avatar.up
+actions+=/call_action_list,name=burst,strict=1,if=(variable.should_burst|variable.burst_window)&(cooldown.recklessness.ready|cooldown.avatar.ready&buff.enrage.up|variable.burst_window)
+actions+=/call_action_list,name=sustained
 
 # ========== TRINKETS ==========
-actions.trinkets=use_item,slot=trinket1,if=variable.burst_window&trinket.1.has_use_buff
-actions.trinkets+=/use_item,slot=trinket2,if=variable.burst_window&trinket.2.has_use_buff
-actions.trinkets+=/use_item,slot=trinket1,if=!trinket.1.has_use_buff&trinket.1.has_cooldown
-actions.trinkets+=/use_item,slot=trinket2,if=!trinket.2.has_use_buff&trinket.2.has_cooldown
-actions.trinkets+=/use_items
+actions.trinkets+=/use_item,slot=trinket1,if=variable.burst_window&trinket.t1.has_use_buff
+actions.trinkets+=/use_item,slot=trinket2,if=variable.burst_window&trinket.t2.has_use_buff
+actions.trinkets+=/use_item,slot=trinket1,if=!trinket.t1.has_use_buff&trinket.t1.has_cooldown
+actions.trinkets+=/use_item,slot=trinket2,if=!trinket.t2.has_use_buff&trinket.t2.has_cooldown
 
 # ========== SUSTAINED DAMAGE ==========
-actions.sustained=impending_victory,if=talent.impending_victory.enabled&health.pct<70
+actions.sustained+=/impending_victory,if=talent.impending_victory.enabled&health.pct<70
 actions.sustained+=/rampage,if=variable.enrage_missing|variable.rage_cap
 actions.sustained+=/execute,if=variable.can_execute&debuff.marked_for_execution.stack>=3
 actions.sustained+=/onslaught
@@ -47,20 +49,17 @@ actions.sustained+=/bloodthirst,if=buff.bloodcraze.stack>=3
 actions.sustained+=/raging_blow
 actions.sustained+=/bloodthirst
 
-# ========== BURST (REORDERED TO SURFACE BLADESTORM) ==========
-actions.burst=impending_victory,if=talent.impending_victory.enabled&health.pct<70
-actions.burst+=/recklessness,if=cooldown.recklessness.ready
+# ========== BURST ==========
+actions.burst+=/impending_victory,if=talent.impending_victory.enabled&health.pct<70
+actions.burst+=/recklessness
+actions.burst+=/avatar,if=buff.enrage.up
+actions.burst+=/thunderous_roar
 actions.burst+=/onslaught
 actions.burst+=/rampage,if=!buff.enrage.up
-actions.burst+=/avatar,if=cooldown.avatar.ready
-actions.burst+=/thunderous_roar,if=cooldown.thunderous_roar.ready
-actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>10)
-# bladestorm options:
-# actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|cooldown.recklessness.remains>20)&movement.distance<=1
-# actions.burst+=/bladestorm,if=buff.enrage.up&buff.recklessness.up
-# actions.burst+=/execute,if=variable.can_execute
-# actions.burst+=/rampage,if=variable.enrage_missing|variable.rage_high
-# actions.burst+=/storm_bolt,if=buff.bladestorm.up
-# actions.burst+=/rampage,if=variable.rage_dump
-actions.burst+=/run_action_list,name=sustained
-
+actions.burst+=/bladestorm,if=buff.enrage.up&(buff.recklessness.up|buff.avatar.up)
+actions.burst+=/execute,if=variable.can_execute&debuff.marked_for_execution.stack>=2
+actions.burst+=/rampage,if=variable.rage_high
+actions.burst+=/execute,if=variable.can_execute
+actions.burst+=/rampage,if=variable.rage_dump
+actions.burst+=/raging_blow
+actions.burst+=/bloodthirst
