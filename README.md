@@ -4,9 +4,9 @@ hekili priorities focusing on arena/solo shuffle/battleground blitz gameplay
 
 ## fury warrior slayer:
 - patch: 11.2.0
-- talents: `CgEArbixk/ZKwTdpZGVHeylmLAAAAAAAAAQjZMzwM2YMmZswMzMmhZMzstNGzMWGMmZmZmZsMMzwMDAAAixy2AbgJYGmAzwGA`
+- talents: `CgEArbixk/ZKwTdpZGVHeylmLAAAAAAAAAQjZMzwM2YMmZswMzMmhZMzstNmZmxygxMmZmZsMMzwMDAAAixy2AbgJYGmAzwGA`
 ```
-Hekili:vw5ZVTTnuC8)w6LEAtWwUoXDRRh2T0dbbqzdOOOuKM8zjctrkqszxxuW)23Jujr0ErjThSbf5tF(((jfzj5EsLG5bYTLlkxVyZQfflw9UY1Biv(t9aPQNX3ZAWfAwh()DhUlU3jLHjIVRZmy54(KQTdsL)gnz7ZaCXMYLOT9aNC71LKQwPqaJMcooP6ZibL05Dj3b2XguEC5Tj3d0STkqq(Bsf3k9GvYivVjq3oSBxXwM3RGAxRzWxm0tQyCV0Or3j7aIh9Mzr5z2gWxiq9zAoeOF8Vc0ntK4TrdImwnlJrFrXWWXBSDONeO)4hb6dSBbMY3w0Z9b6hq6RwhOV9Ptpx5RMuoXQERrLIG39YQBb(Ef4CA83RP)6fzI0A47pYoKIW1ZQXlHq21dAHu3uFqYrF(ue1vVS7cAl2wvimh1tGmANIn00MI3R)PaKxZZtbrcB(fYyrhjvuMdo7adZMrSV)LXoA4tLGNR4mr13oOfG1m4QTMr8lx8tg4ZZp7Kl8M5AiZQMtTXjVz(zWlRJJkeFCStEzzgvlRRNnogTC(zrbKG2XS7br9oJTg(gWhIikWHe((rYRYcq3q8UKAbWWakZMYjThzmQ9RmdpgoIAl0aAWYskF29kkJr4BLwxQjDzAQ8)3)Mjr0Q15w9yQ4cBUk3MhD5lS5vMjsoh3Y(oCw2AEVFZ5(vtCggT54L6((C7YHCMD4J9yNOPdV89PRVF2lKphFQFWBAAuqmhM9oG1byRGTE8gYlLdbDKz1Ox7iv33kDbAV1StQWoW4dDsNdpmqDd99gl2SJTubAQ0k540GvQ3dExrGgO34hFPue0HxObc0IwgUnCaSNISLgmHJRKAUAaNsWJK(wW(hHpfO)EG(L)XbrsqN7R)wGESvYBZTMPpnPAGQnr4FRxj5sVAIRiUkkomj6FgOOV)Gm3pIaNX(AeQiFRYmLpkvQSi6bK(hnnLnsBPh6WKDuyNY4lcF6MUyclUrjQqQEeOPVrJhgRZP0C8d)SbFRXsQ(xmhXng1X01yEc5)c
+Hekili:nwvtpUjmq0Fl9sv7Lii0KnRuBp0B9YQvIEPxmmXE4dfInY2K0TAf)27ytZIHnSBoKid8M37nJNXMfZ(flvawK9W6O1BI2LeTk6lrjXBzP2NArwAlWpaL0cjCK()Xtp6E3tnkq4I1O60C69S09D1n2Fkz7FnHjr7whtyBro7H7wZsRQfcCakA4S0Ftm0uBSgVDWcORXslFWBpuc7Bqb7hSuUU2I6AGL(H(89DffR2dwBdMzQuD2vDTSuGBRvsYobFGzj3SivwqxI2vcsFqYX(8V)T(8DJmXRCaCCK44OZGzQIISsUWzWxGzSk9XS9kY5Vj595B7Z)4f73aufWfjz((8NFUp))ruHqJTAvl32N)vYqjBcTpzMVC7jKl(ar1i)qdAms637j7MOGmSsXpCgo5RfBwu(xtXGcF6soJAdQpG6Sb)5Ta5T5XDhf3NhvV(ylkf1YYSt1CQI9KZfBx0fEPqPM6DxjuNLJePKMgORSY3wC3nrqyJvy1ZXWU3MHjfBNrg3hUc5WjG2iC0E)Bt7aWx29U2(6iR2QoPa1QotMwnqFC0nM4VtBZ1mZsDWbTsJ99EZS8C(8TXbfCpomNgVoGvnCSfggvJxEExGEspcupOiRqPZW)G8ohfROos(HbMtcsqtN78QmbcucfGz9O2dCmODYTKoImnwIsudELNC2vJsjSv1AJVhn2pQ)623PNheVje1LsXmmBdXCXYZW8oJeEZX1WFXjvRLD)UP(Q0nctyopx37dXfsYeC0JTuNO6iDa)lxrC1d9NsVVFWQklBqxnmiMzhhnxoIOZGwsU24UMRvRkQB834bD2kLMw5aX(3p
 ```
 
 
@@ -16,14 +16,14 @@ actions.precombat+=/berserker_stance,toggle=on
 
 actions+=/battle_shout,if=!buff.battle_shout.up  
 actions+=/charge,if=target.distance>=8 
-actions+=/storm_bolt,if=buff.bladestorm.up|target.health.pct<=35&target.distance>=6
-actions+=/shockwave,if=buff.recklessness.up|target.health.pct<=50
-actions+=/impending_victory,if=health.pct<=50    
+actions+=/storm_bolt,if=target.distance>6&buff.bladestorm.up|target.health.pct<=35
+actions+=/shockwave,if=target.distance<=6&buff.recklessness.up|target.health.pct<=50
+actions+=/impending_victory,if=health.pct <= 50|(buff.berserker_stance.up&health.pct<=70)  
 actions+=/onslaught,if=buff.enrage.down
 actions+=/recklessness,if=buff.enrage.up                                  
 actions+=/avatar,if=buff.recklessness.down&buff.enrage.up                  
 actions+=/thunderous_roar,if=buff.avatar.up|buff.recklessness.up           
-actions+=/bladestorm,if=buff.enrage.up|buff.recklessness.up|buff.avatar.up|target.health.pct<=30
+actions+=/bladestorm,if=buff.enrage.up&buff.recklessness.up|buff.avatar.up|target.health.pct<=30
 actions+=/rampage,if=buff.enrage.down|rage>=120
 actions+=/execute,if=debuff.marked_for_execution.stack>=3|buff.sudden_death.stack>=2                            
 actions+=/bloodthirst,if=buff.enraged_regeneration.up
