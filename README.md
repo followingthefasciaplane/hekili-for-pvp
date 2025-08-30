@@ -37,7 +37,5 @@ actions+=/bloodthirst
 ```
 
 **video**
-
-https://youtu.be/zxu4SgpSPtM?si=S6JX7n-Mc5x9o6v7
-[![video](https://i.sstatic.net/zxu4SgpSPtM.png)](https://youtu.be/zxu4SgpSPtM)
+[![video](https://img.youtube.com/vi/zxu4SgpSPtM/maxresdefault.jpg)](https://youtu.be/zxu4SgpSPtM)
 
