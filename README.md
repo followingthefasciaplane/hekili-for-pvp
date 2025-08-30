@@ -2,15 +2,17 @@
 
 hekili priorities focusing on arena/solo shuffle/battleground blitz gameplay
 
-## fury warrior slayer:
+## fury warrior slayer
 - patch: 11.2.0
 - talents: `CgEArbixk/ZKwTdpZGVHeylmLAAAAAAAAAQjZMzwM2YMmZswMzMmhZMzstNmZmxygxMmZmZsMMzwMDAAAixy2AbgJYGmAzwGA`
-- display: primary only 5 icons + single target
-```
-Hekili:nwztpUjmqy4Fl9sv7feKSjBQuBp0B9s0krV0lgCSh(qXyJSnjnvR43EhBAwmSHDZHeXhZ8mVE87yijKFrs5ulq2VkE1M4DRJJIFij(HTKu7LwGK2szhPL4fsAd()tNEY9SlcfL7Y1O60m85K0dD1c7pLKdVg464DRsWyBbgz)JRiPv1ComekyyK0FJee1gRXlhOG2jS4L79YdK0dcGt(bjLPRTGUMss)qF(HUIIOduRvazMkvNnQRLKsz2ALeLtWliwunlIYs1LGnIJ1NkzqF(3)wF(UrsSkxaogRDm6mqMQOiRKXDc8LWmwLUj7Gcv(BcVpFBF(hVkFbf7aUmrX3N)8Z95)pJkGkSvrTmBF(xrbTEtO8rX8W9VGC5huunWokaJrI)EVYUjoyfwPyhptp57fBwS8VgXqf(011mOnG(iOZg0NxcO2MN3JyEFES61nTGKxllZovZWo2fNk2UOk8LcKA07gXvNLJGusJG2vw5TfpExacnwHDphHDVnHjnBNqg3hUbC6jkUr4W(L3g7qGVS7DR91rQ2Qojh0QotMwnGpj(ox4VJT5wIzjhCGvA037fZYZ5Z3ghQG72H50Kvbu10Mw6WOAYYZ7CWdTHIEqEwHsNb)byDoerOJKDCG86rUdVFG767rQ8mnucsqt9uNCUKqP42QATX7)s8JXV2AoDwpztyuxxMZIzBymxL8SyEh7UxCmn9VWcDI5QF3uDv6gpXyopVUFjmUqitIdVTfDzQg8W7xo()MhOpfVFV2QklfGRhgKZSJAMxoe0zQwIQ24(ewRwvul8FnJ2zRuA8kxqK)9d
-```
+- display: primary only 5 icons + single target + all toggles except potions
 
+### aceserializer string for hekili import  
+```  
+Hekili:nwztpUjmqy4Fl9sv7feKSjBQuBp0B9s0krV0lgCSh(qXyJSnjnvR43EhBAwmSHDZHeXhZ8mVE87yijKFrs5ulq2VkE1M4DRJJIFij(HTKu7LwGK2szhPL4fsAd()tNEY9SlcfL7Y1O60m85K0dD1c7pLKdVg464DRsWyBbgz)JRiPv1ComekyyK0FJee1gRXlhOG2jS4L79YdK0dcGt(bjLPRTGUMss)qF(HUIIOduRvazMkvNnQRLKsz2ALeLtWliwunlIYs1LGnIJ1NkzqF(3)wF(UrsSkxaogRDm6mqMQOiRKXDc8LWmwLUj7Gcv(BcVpFBF(hVkFbf7aUmrX3N)8Z95)pJkGkSvrTmBF(xrbTEtO8rX8W9VGC5huunWokaJrI)EVYUjoyfwPyhptp57fBwS8VgXqf(011mOnG(iOZg0NxcO2MN3JyEFES61nTGKxllZovZWo2fNk2UOk8LcKA07gXvNLJGusJG2vw5TfpExacnwHDphHDVnHjnBNqg3hUbC6jkUr4W(L3g7qGVS7DR91rQ2Qojh0QotMwnGpj(ox4VJT5wIzjhCGvA037fZYZ5Z3ghQG72H50Kvbu10Mw6WOAYYZ7CWdTHIEqEwHsNb)byDoerOJKDCG86rUdVFG767rQ8mnucsqt9uNCUKqP42QATX7)s8JXV2AoDwpztyuxxMZIzBymxL8SyEh7UxCmn9VWcDI5QF3uDv6gpXyopVUFjmUqitIdVTfDzQg8W7xo()MhOpfVFV2QklfGRhgKZSJAMxoe0zQwIQ24(ewRwvul8FnJ2zRuA8kxqK)9d  
+```  
 
+### apl import  
 ```
 actions.precombat+=/battle_shout
 actions.precombat+=/berserker_stance,toggle=on
@@ -36,6 +38,6 @@ actions+=/raging_blow
 actions+=/bloodthirst
 ```
 
-**video**
+### video
 [![video](https://img.youtube.com/vi/zxu4SgpSPtM/maxresdefault.jpg)](https://youtu.be/zxu4SgpSPtM)
 
